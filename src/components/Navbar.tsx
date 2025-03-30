@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Leaf } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import RedPandaMascot from './RedPandaMascot';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,8 +30,10 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Leaf className={`h-8 w-8 ${isSticky ? 'text-cream' : 'text-green-01'}`} />
-            <span className={`ml-2 text-xl font-bold font-quicksand ${isSticky ? 'text-cream' : 'text-green-01'}`}>
+            <div className="mr-2">
+              <RedPandaMascot pose="excited" size="sm" />
+            </div>
+            <span className={`text-xl font-bold font-quicksand ${isSticky ? 'text-cream' : 'text-green-01'}`}>
               EcoQuest
             </span>
           </div>
@@ -52,7 +55,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="game-button-primary px-4 py-2">
+            <Button className={`px-4 py-2 rounded-xl font-bold ${
+              isSticky 
+                ? 'bg-cream text-green-01 hover:bg-green-03 hover:text-green-01' 
+                : 'bg-green-01 text-cream hover:bg-green-02'
+            } hover:scale-105 transition-all duration-300`}>
               Demander une démo
             </Button>
           </div>
@@ -72,7 +79,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-cream rounded-lg shadow-lg">
+          <div className="md:hidden mt-4 py-4 bg-white rounded-lg shadow-lg">
             <nav className="flex flex-col space-y-4 px-4">
               {['Accueil', 'Fonctionnalités', 'Comment ça marche', 'Témoignages', 'Tarifs'].map((item) => (
                 <a
@@ -84,9 +91,12 @@ const Navbar = () => {
                   {item}
                 </a>
               ))}
-              <Button className="game-button-primary w-full">
-                Demander une démo
-              </Button>
+              <div className="flex items-center space-x-2">
+                <RedPandaMascot pose="victory" size="sm" />
+                <Button className="game-button-primary w-full rounded-xl">
+                  Demander une démo
+                </Button>
+              </div>
             </nav>
           </div>
         )}

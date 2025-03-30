@@ -59,6 +59,10 @@ export default {
 				'green-03': '#B8D8BE', // Light green (tertiary)
 				'black': '#333333', // For text
 				'cream': '#F8F4E3', // For backgrounds
+				// Ajout des couleurs du panda roux
+				'panda-orange': '#FF7F41',
+				'panda-brown': '#8B4513',
+				'panda-cream': '#FFF8DC',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -83,13 +87,28 @@ export default {
 					'0%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-8px)' },
 					'100%': { transform: 'translateY(0)' }
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'bounce': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-25%)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'level-up': 'level-up 2s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'bounce': 'bounce 1s infinite',
+				'spin-slow': 'spin-slow 3s linear infinite'
 			},
 			fontFamily: {
 				'montserrat': ['Montserrat', 'sans-serif'],
