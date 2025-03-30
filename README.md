@@ -1,69 +1,39 @@
-# Welcome to your Lovable project
 
-## Project info
+# EcoQuest - Gamification pour Actions Écologiques en Entreprise
 
-**URL**: https://lovable.dev/projects/f61916c2-c4c5-453a-89ae-397096338fc0
+## À propos du projet
 
-## How can I edit this code?
+EcoQuest est une plateforme B2B de gamification qui permet aux entreprises d'encourager leurs employés à accomplir des actions écologiques à travers des défis ludiques et des récompenses.
 
-There are several ways of editing your application.
+## Fonctionnalités principales
 
-**Use Lovable**
+- Défis écologiques personnalisés
+- Système de récompenses et de badges
+- Métriques d'impact environnemental
+- Compétition d'équipes
+- Rapports et analyses RSE
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f61916c2-c4c5-453a-89ae-397096338fc0) and start prompting.
+## Technologies utilisées
 
-Changes made via Lovable will be committed automatically to this repo.
+Ce projet est construit avec :
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- Vite
+- shadcn/ui
 
-## How can I deploy this project?
+## Palette de couleurs
 
-Simply open [Lovable](https://lovable.dev/projects/f61916c2-c4c5-453a-89ae-397096338fc0) and click on Share -> Publish.
+- Couleur primaire : Green 01 (vert foncé) - Pour les éléments principaux
+- Couleurs secondaires :
+  - Green 02 (vert pâle) - Pour les arrière-plans secondaires
+  - Green 03 (vert très pâle) - Pour les fonds de sections
+  - Black - Pour le texte principal
+  - Cream - Pour les fonds de page principaux
 
-## I want to use a custom domain - is that possible?
+## Structure du projet
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- Une landing page moderne et responsive
+- Sections principales : Hero, Fonctionnalités, Comment ça marche, Témoignages, Tarifs
+- Design éco-responsable avec des éléments de gamification
