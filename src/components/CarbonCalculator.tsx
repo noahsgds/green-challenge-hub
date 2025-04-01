@@ -33,6 +33,7 @@ const CarbonCalculator = () => {
   }, []);
 
   const calculerEconomies = () => {
+    console.log("Calculating economies...");
     let consoElectriqueBase = effectif * 1500;
 
     let co2Covoiturage = covoiturage * 0.375;
@@ -193,7 +194,8 @@ const CarbonCalculator = () => {
               
               <div className="pt-2">
                 <Button 
-                  onClick={() => calculerEconomies()}
+                  type="button"
+                  onClick={calculerEconomies}
                   className="w-full bg-green-01 hover:bg-black text-cream mt-4 game-button px-8 py-6 h-auto text-lg"
                 >
                   Découvrir mon impact
