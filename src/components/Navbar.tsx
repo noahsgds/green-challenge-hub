@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Leaf } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,25 +29,38 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Leaf className={`h-8 w-8 ${isSticky ? 'text-cream' : 'text-green-01'}`} />
-            <span className={`ml-2 text-xl font-bold font-quicksand ${isSticky ? 'text-cream' : 'text-green-01'}`}>
-              EcoQuest
-            </span>
+            <Link to="/">
+              <div className="flex items-center">
+                <Leaf className={`h-8 w-8 ${isSticky ? 'text-cream' : 'text-green-01'}`} />
+                <span className={`ml-2 text-xl font-bold font-quicksand ${isSticky ? 'text-cream' : 'text-green-01'}`}>
+                  EcoQuest
+                </span>
+              </div>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {['Accueil', 'Fonctionnalités', 'Comment ça marche', 'Témoignages', 'Tarifs'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                className={`font-medium transition-colors hover:text-green-02 ${
-                  isSticky ? 'text-cream' : 'text-black'
-                }`}
-              >
-                {item}
-              </a>
-            ))}
+            {['Accueil', 'Fonctionnalités', 'Comment ça marche', 'Témoignages', 'Tarifs'].map((item) => {
+              const path = item === 'Accueil' ? '/' : `/#${item.toLowerCase().replace(/\s+/g, '-')}`;
+              return (
+                <Link
+                  key={item}
+                  to={path}
+                  className={`font-medium transition-colors hover:text-green-02 ${
+                    isSticky ? 'text-cream' : 'text-black'
+                  }`}
+                >
+                  {item}
+                </Link>
+              );
+            })}
+            <Link to="/test" className={`font-medium transition-colors hover:text-green-02 ${isSticky ? 'text-cream' : 'text-black'}`}>
+              Test
+            </Link>
+            <Link to="/simulateur-avance" className={`font-medium transition-colors hover:text-green-02 ${isSticky ? 'text-cream' : 'text-black'}`}>
+              Simulateur
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -74,16 +87,25 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 bg-cream rounded-lg shadow-lg">
             <nav className="flex flex-col space-y-4 px-4">
-              {['Accueil', 'Fonctionnalités', 'Comment ça marche', 'Témoignages', 'Tarifs'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="font-medium text-black hover:text-green-01"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              ))}
+              {['Accueil', 'Fonctionnalités', 'Comment ça marche', 'Témoignages', 'Tarifs'].map((item) => {
+                const path = item === 'Accueil' ? '/' : `/#${item.toLowerCase().replace(/\s+/g, '-')}`;
+                return (
+                  <Link
+                    key={item}
+                    to={path}
+                    className="font-medium text-black hover:text-green-01"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item}
+                  </Link>
+                );
+              })}
+              <Link to="/test" className="font-medium text-black hover:text-green-01" onClick={() => setIsMenuOpen(false)}>
+                Test
+              </Link>
+              <Link to="/simulateur-avance" className="font-medium text-black hover:text-green-01" onClick={() => setIsMenuOpen(false)}>
+                Simulateur
+              </Link>
               <Button className="game-button-primary w-full">
                 Demander une démo
               </Button>
