@@ -17,10 +17,10 @@ const CTA = () => {
             Rejoignez les entreprises qui font de l'écologie un moteur d'engagement et d'innovation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-cream text-green-01 hover:bg-green-03 game-button px-8 py-3 text-base">
+            <Button className="bg-cream text-green-01 hover:bg-green-03 hover:text-black game-button px-8 py-3 text-base h-auto">
               Demander une démo
             </Button>
-            <Button className="bg-transparent border border-cream text-cream hover:bg-green-02 game-button px-8 py-3 text-base">
+            <Button className="bg-transparent border-2 border-cream text-cream hover:bg-green-02 game-button px-8 py-3 text-base h-auto">
               Télécharger la brochure
             </Button>
           </div>
