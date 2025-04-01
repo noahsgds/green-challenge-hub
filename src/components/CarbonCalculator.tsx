@@ -92,6 +92,13 @@ const CarbonCalculator = () => {
     calculerEconomies();
   }, []);
 
+  // Fonction de gestion des changements d'inputs qui accepte correctement les valeurs zéro
+  const handleInputChange = (setter: React.Dispatch<React.SetStateAction<number>>, value: string) => {
+    // Convertir la valeur en nombre, si vide ou invalide, utilisez 0
+    const numValue = value === '' ? 0 : parseInt(value);
+    setter(isNaN(numValue) ? 0 : numValue);
+  };
+
   return (
     <section id="simulateur" className="section py-20 bg-cream">
       <div className="container mx-auto px-4">
@@ -121,7 +128,7 @@ const CarbonCalculator = () => {
                   id="effectif" 
                   min="1" 
                   value={effectif} 
-                  onChange={(e) => setEffectif(parseInt(e.target.value) || 1)}
+                  onChange={(e) => handleInputChange(setEffectif, e.target.value)}
                   className="border-green-03 focus:border-green-01 bg-white"
                 />
               </div>
@@ -135,7 +142,7 @@ const CarbonCalculator = () => {
                   id="covoiturage" 
                   min="0" 
                   value={covoiturage} 
-                  onChange={(e) => setCovoiturage(parseInt(e.target.value) || 0)}
+                  onChange={(e) => handleInputChange(setCovoiturage, e.target.value)}
                   className="border-green-03 focus:border-green-01 bg-white"
                 />
               </div>
@@ -149,7 +156,7 @@ const CarbonCalculator = () => {
                   id="dechets" 
                   min="0" 
                   value={dechets} 
-                  onChange={(e) => setDechets(parseInt(e.target.value) || 0)}
+                  onChange={(e) => handleInputChange(setDechets, e.target.value)}
                   className="border-green-03 focus:border-green-01 bg-white"
                 />
               </div>
@@ -165,7 +172,7 @@ const CarbonCalculator = () => {
                   id="velo" 
                   min="0" 
                   value={velo} 
-                  onChange={(e) => setVelo(parseInt(e.target.value) || 0)}
+                  onChange={(e) => handleInputChange(setVelo, e.target.value)}
                   className="border-green-03 focus:border-green-01 bg-white"
                 />
               </div>
@@ -179,7 +186,7 @@ const CarbonCalculator = () => {
                   id="joursEteints" 
                   min="0" 
                   value={joursEteints} 
-                  onChange={(e) => setJoursEteints(parseInt(e.target.value) || 0)}
+                  onChange={(e) => handleInputChange(setJoursEteints, e.target.value)}
                   className="border-green-03 focus:border-green-01 bg-white"
                 />
               </div>
